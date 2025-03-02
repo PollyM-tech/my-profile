@@ -1,4 +1,4 @@
-# Personal Website Profile
+# Personal Website 
 
 Welcome to my personal website project! This is a simple website that showcases my profile as a software engineer. It includes a homepage, a profile picture, and links to my social media accounts. The website is **responsive**, meaning it works well on both desktop and mobile devices.
 
