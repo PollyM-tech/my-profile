@@ -1,0 +1,140 @@
+* {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: rgb(56, 55, 55);
+    color: aliceblue;
+    line-height: 1.6;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "main div"
+        "footer footer";
+    gap: 20px;
+    padding: 25px;
+    grid-template-columns: auto;
+}
+
+header {
+    grid-area: header;
+    padding: 5px;
+    text-align: center;
+}
+
+nav {
+    padding: 10px;
+    text-align: center;
+    color: rgb(184, 235, 184);
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 10px;
+}
+
+header nav ul li a {
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: rgb(80, 76, 77);
+}
+
+main {
+    grid-area: main; 
+    margin-left: 50%;
+}
+
+main ul {
+    list-style: none;
+}
+
+.great {
+    box-sizing: border-box;
+    padding: 10; 
+    width: 25%;
+    border-radius: 30px;
+    background: rgb(10, 248, 10);
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    margin: 5px;
+    font-size: 13px;
+}
+
+.socials {
+    box-sizing: border-box;
+    padding: 10; 
+    width: 25%;
+    border-radius: 30px;
+    background: rgb(10, 248, 10);
+    height: 10%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 10px;
+    margin: 5px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 16px; 
+}
+
+@media (max-width: 700px) {
+    .great {
+        width: 100%;
+        font-size: 12px;
+        padding: 0; 
+        margin: 5px 0; 
+    }
+
+    .socials {
+        width: 100%;
+        font-size: 8px;
+        padding: 0; 
+        margin: 5px 0; 
+    }
+}
+
+div img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-right: 50%;
+    margin-top: 0;
+}
+
+footer {
+    grid-area: footer;
+    background: #444;
+    color: aliceblue;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+footer p a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 15px;
+}
