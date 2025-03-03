@@ -36,7 +36,7 @@ This file styles the website using **CSS**. It includes:
 - Colors, fonts, and layout for the website.
 - **Media queries** to make the website responsive (look good on mobile devices).
 
-### 3. **`src/index.js`**
+### 3. **`index.js`**
 This file adds interactivity to the website using **JavaScript**. It includes:
 - A function to change the background color based on the screen size.
 - A "Say Hello" button that shows a greeting message when clicked.
