@@ -1,7 +1,7 @@
 function handleMediaQuery(x) {
     if (x.matches) { // If screen width <= 700px
         document.body.style.backgroundColor = "rgb(56, 55, 55)";
-    } else { // If screen width 
+    } else { // If screen width =>700px
         document.body.style.backgroundColor = "#023020";
     }
 }
