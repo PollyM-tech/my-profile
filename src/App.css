@@ -1,0 +1,60 @@
+:root {
+  --forest-green: #2d6a4f;
+  --electric-lime: #70e000;
+  --bright-yellow-green: #ccff33;
+  --mint-cream: #d8f3dc;
+  --dark-text: #081c15;
+  --light-text: #f8f9fa;
+}
+
+/* Update body and components */
+body {
+  background-color: var(--mint-cream);
+  color: var(--dark-text);
+}
+
+.navbar {
+  background-color: var(--forest-green) !important;
+}
+
+.btn-primary {
+  background-color: var(--forest-green);
+  border-color: var(--forest-green);
+}
+
+.btn-primary:hover {
+  background-color: #245c43;
+  border-color: #1d4e36;
+}
+
+.text-primary {
+  color: var(--forest-green) !important;
+}
+
+.bg-primary {
+  background-color: var(--forest-green) !important;
+}
+
+.card {
+  border: 1px solid rgba(45, 106, 79, 0.1);
+}
+
+.underline {
+  background-color: var(--electric-lime) !important;
+}
+
+.btn-outline-primary {
+  color: var(--forest-green);
+  border-color: var(--forest-green);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--forest-green);
+  color: white;
+}
+
+.alert-info {
+  background-color: rgba(112, 224, 0, 0.1);
+  border-color: rgba(112, 224, 0, 0.3);
+  color: var(--dark-text);
+}
