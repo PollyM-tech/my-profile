@@ -17,6 +17,8 @@ function App() {
             className="navbar-brand fw-bold"
             to="/"
             style={{ color: "#ccff33" }}
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
           >
             Pauline Moraa
           </Link>
@@ -31,7 +33,13 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/" style={{ color: "#70e000" }}>
+                <Link
+                  className="nav-link"
+                  to="/"
+                  style={{ color: "#70e000" }}
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                >
                   Home
                 </Link>
               </li>
@@ -40,6 +48,8 @@ function App() {
                   className="nav-link"
                   to="/about"
                   style={{ color: "#70e000" }}
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
                 >
                   About
                 </Link>
@@ -49,6 +59,8 @@ function App() {
                   className="nav-link"
                   to="/projects"
                   style={{ color: "#70e000" }}
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
                 >
                   Projects
                 </Link>
@@ -58,6 +70,8 @@ function App() {
                   className="nav-link"
                   to="/contact"
                   style={{ color: "#70e000" }}
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
                 >
                   Contact
                 </Link>
@@ -68,6 +82,8 @@ function App() {
                   href={`${import.meta.env.BASE_URL}Pauline_Moraa_Resume.pdf`} // ✅ Correct path with Vite base
                   download
                   style={{ color: "#70e000" }}
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
                 >
                   Resume
                 </a>
