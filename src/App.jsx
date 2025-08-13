@@ -4,10 +4,19 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
+// ✅ Bootstrap collapse without breaking React Router
+function closeNavbar() {
+  const navbar = document.getElementById("navbarNav");
+  if (navbar && navbar.classList.contains("show")) {
+    const bsCollapse = new window.bootstrap.Collapse(navbar);
+    bsCollapse.hide();
+  }
+}
+
 function App() {
   return (
     <div className="min-vh-100 d-flex flex-column">
-      {/* Navigation Bar */}
+      {/* Navbar */}
       <nav
         className="navbar navbar-expand-lg navbar-dark py-3 shadow sticky-top"
         style={{ background: "#2d6a4f" }}
@@ -17,19 +26,25 @@ function App() {
             className="navbar-brand fw-bold"
             to="/"
             style={{ color: "#ccff33" }}
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
+            onClick={closeNavbar}
           >
             Pauline Moraa
           </Link>
+
+          {/* Toggle Button */}
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
+          {/* Menu Links */}
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
@@ -37,8 +52,7 @@ function App() {
                   className="nav-link"
                   to="/"
                   style={{ color: "#70e000" }}
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
+                  onClick={closeNavbar}
                 >
                   Home
                 </Link>
@@ -48,8 +62,7 @@ function App() {
                   className="nav-link"
                   to="/about"
                   style={{ color: "#70e000" }}
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
+                  onClick={closeNavbar}
                 >
                   About
                 </Link>
@@ -59,8 +72,7 @@ function App() {
                   className="nav-link"
                   to="/projects"
                   style={{ color: "#70e000" }}
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
+                  onClick={closeNavbar}
                 >
                   Projects
                 </Link>
@@ -70,8 +82,7 @@ function App() {
                   className="nav-link"
                   to="/contact"
                   style={{ color: "#70e000" }}
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
+                  onClick={closeNavbar}
                 >
                   Contact
                 </Link>
@@ -79,11 +90,10 @@ function App() {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  href={`${import.meta.env.BASE_URL}Pauline_Moraa_Resume.pdf`} // ✅ Correct path with Vite base
+                  href={`${import.meta.env.BASE_URL}Pauline_Moraa_Resume.pdf`}
                   download
                   style={{ color: "#70e000" }}
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
+                  onClick={closeNavbar}
                 >
                   Resume
                 </a>
@@ -93,7 +103,7 @@ function App() {
         </div>
       </nav>
 
-      {/* Main Content */}
+      {/* Page Content */}
       <main className="container flex-grow-1 py-5">
         <Routes>
           <Route path="/" element={<Home />} />
