@@ -2,9 +2,7 @@ export default function About() {
   return (
     <section className="py-5">
       <div className="text-center mb-5">
-        <h1 className="display-5 fw-bold" style={{ color: "#2d6a4f" }}>
-          About Me
-        </h1>
+        <h1 className="display-5 fw-bold text-success">About Me</h1>
         <div
           className="underline mx-auto mb-3"
           style={{
@@ -14,7 +12,7 @@ export default function About() {
             background: "#70e000",
           }}
         ></div>
-        <p className="lead" style={{ color: "#245c43" }}>
+        <p className="lead text-success">
           Passionate software engineer crafting digital solutions
         </p>
       </div>
@@ -27,6 +25,7 @@ export default function About() {
           >
             <div className="card-body p-5">
               <div className="row align-items-center">
+                {/* Profile Section */}
                 <div className="col-md-4 text-center mb-4 mb-md-0">
                   <div
                     className="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
@@ -37,22 +36,23 @@ export default function About() {
                       color: "white",
                     }}
                   >
-                    <i className="bi bi-person fs-1"></i>
+                    <i
+                      className="bi bi-person fs-1"
+                      aria-label="Profile Icon"
+                    ></i>
                   </div>
-                  <h4 style={{ color: "#2d6a4f" }}>Pauline Moraa</h4>
-                  <p style={{ color: "#245c43" }}>Full Stack Developer</p>
+                  <h4 className="text-success">Pauline Moraa</h4>
+                  <p className="text-success">Full Stack Developer</p>
                 </div>
 
+                {/* About Text */}
                 <div className="col-md-8">
                   <p className="lead mb-4">
                     I'm{" "}
-                    <span className="fw-bold" style={{ color: "#2d6a4f" }}>
-                      Pauline Moraa
-                    </span>
-                    , a software engineer who loves building functional digital
+                    <span className="fw-bold text-success">Pauline Moraa</span>,
+                    a software engineer who loves building functional digital
                     experiences that make a difference.
                   </p>
-
                   <p className="mb-4">
                     I specialize in both frontend and backend development,
                     building full-stack applications using{" "}
@@ -67,7 +67,7 @@ export default function About() {
                     </span>
                   </p>
 
-                  {/* Skills Cards Layout */}
+                  {/* Skills Cards */}
                   <div className="row g-3 mb-4">
                     <div className="col-md-4">
                       <div
@@ -94,7 +94,7 @@ export default function About() {
                       >
                         <i className="bi bi-server fs-2 mb-2"></i>
                         <h6 className="fw-bold mb-2">Backend Power</h6>
-                        <small>Flask • SQLAlchemy • APIs</small>
+                        <small>Flask • SQLAlchemy • REST APIs</small>
                       </div>
                     </div>
                     <div className="col-md-4">
@@ -108,16 +108,14 @@ export default function About() {
                       >
                         <i className="bi bi-database fs-2 mb-2"></i>
                         <h6 className="fw-bold mb-2">Data Mastery</h6>
-                        <small>PostgreSQL • SQLite • Modeling</small>
+                        <small>PostgreSQL • SQLite • Data Modeling</small>
                       </div>
                     </div>
                   </div>
 
-                  {/* Tech Stack Pills */}
+                  {/* Toolkit */}
                   <div className="text-center mb-4">
-                    <h6 style={{ color: "#2d6a4f" }} className="mb-3">
-                      My Toolkit
-                    </h6>
+                    <h6 className="text-success mb-3">My Toolkit</h6>
                     <div className="d-flex flex-wrap justify-content-center gap-2">
                       {[
                         "VS Code",
@@ -150,7 +148,7 @@ export default function About() {
               <hr style={{ borderColor: "#70e000", borderWidth: "2px" }} />
 
               <div className="text-center">
-                <p className="mb-0" style={{ color: "#245c43" }}>
+                <p className="mb-0 text-success">
                   I am passionate about learning new technologies and improving
                   my skills. I enjoy collaborating with others and contributing
                   to open-source projects. Let's build something amazing

@@ -1,60 +1,197 @@
 :root {
-  --forest-green: #2d6a4f;
-  --electric-lime: #70e000;
-  --bright-yellow-green: #ccff33;
-  --mint-cream: #d8f3dc;
-  --dark-text: #081c15;
-  --light-text: #f8f9fa;
+    --primary-color: #2d6a4f;
+    --secondary-color: #70e000;
+    --accent-color: #ccff33;
+    --light-bg: rgba(216, 243, 220, 0.5);
 }
 
-/* Update body and components */
 body {
-  background-color: var(--mint-cream);
-  color: var(--dark-text);
+    padding-top: 76px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
 .navbar {
-  background-color: var(--forest-green) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 5px;
+    color: #495057 !important;
+    transition: all 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
 }
 
 .btn-primary {
-  background-color: var(--forest-green);
-  border-color: var(--forest-green);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .btn-primary:hover {
-  background-color: #245c43;
-  border-color: #1d4e36;
-}
-
-.text-primary {
-  color: var(--forest-green) !important;
-}
-
-.bg-primary {
-  background-color: var(--forest-green) !important;
-}
-
-.card {
-  border: 1px solid rgba(45, 106, 79, 0.1);
-}
-
-.underline {
-  background-color: var(--electric-lime) !important;
+    background-color: #245c43;
+    border-color: #245c43;
 }
 
 .btn-outline-primary {
-  color: var(--forest-green);
-  border-color: var(--forest-green);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--forest-green);
-  color: white;
+    background-color: var(--primary-color);
+    color: white;
 }
 
-.alert-info {
-  background-color: rgba(112, 224, 0, 0.1);
-  border-color: rgba(112, 224, 0, 0.3);
-  color: var(--dark-text);
+.section-title {
+    position: relative;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.home-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(216, 243, 220, 0.3) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.skill-card {
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.contact-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    background: linear-gradient(135deg, rgba(216, 243, 220, 0.8), rgba(204, 255, 51, 0.1));
+}
+
+.contact-method {
+    transition: all 0.3s;
+    border: 2px solid rgba(112, 224, 0, 0.3);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(112, 224, 0, 0.15), rgba(204, 255, 51, 0.1));
+}
+
+.contact-method:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(112, 224, 0, 0.25);
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, rgba(112, 224, 0, 0.2), rgba(204, 255, 51, 0.15));
+}
+
+.contact-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(45, 106, 79, 0.4);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding-top: 66px;
+    }
+    
+    .home-content {
+        text-align: center;
+    }
+    
+    .home-content .btn {
+        margin: 5px;
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .home-buttons {
+        justify-content: center;
+    }
+    
+    .section-title::after {
+        margin: 10px auto 0;
+    }
+    
+    .profile-img-container {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .skill-card, .project-card {
+        margin-bottom: 20px;
+    }
+    
+    .contact-method {
+        margin-bottom: 15px;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2.2rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }

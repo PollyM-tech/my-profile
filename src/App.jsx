@@ -1,63 +1,39 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Resume from "./components/Resume";
+import Footer from "./components/Footer";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const closeMenu = () => setIsOpen(false);
+export default function App() {
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    window.onerror = (message, source, lineno, colno, error) => {
+      setError(message);
+    };
+  }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div className="container">
-        <Link className="navbar-brand fw-bold" to="/" onClick={closeMenu}>
-          Pauline Moraa
-        </Link>
-
-        {/* Mobile toggle button */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        {/* Collapsible content */}
-        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/" onClick={closeMenu}>
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about" onClick={closeMenu}>
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/projects" onClick={closeMenu}>
-                Projects
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contact" onClick={closeMenu}>
-                Contact
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div className="App">
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
