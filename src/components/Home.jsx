@@ -133,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Stats Section */}
+      {/* Statistics Section */}
       <section className="py-5 bg-light">
         <div className="container">
           <div className="row text-center">

@@ -111,7 +111,7 @@ export default function Contact() {
                 ))}
               </div>
 
-              {/* Notice */}
+              {/* Notice section */}
               <div className="text-center mt-4">
                 <p className="fw-medium text-success mb-0">
                   I usually respond within 24–48 hours. Let’s connect!

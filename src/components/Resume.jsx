@@ -6,10 +6,10 @@ export default function ResumeButton() {
   const handleDownload = () => {
     if (disabled) return;
 
-    // Disable button
+    // Disabling button after click
     setDisabled(true);
 
-    // Trigger download
+    // Triggering downloading the PDF
     const link = document.createElement("a");
     link.href = "/Pauline_Moraa_Resume.pdf";
     link.setAttribute("download", "Pauline_Moraa_Resume.pdf");
@@ -17,7 +17,7 @@ export default function ResumeButton() {
     link.click();
     document.body.removeChild(link);
 
-    // Re-enable after 10 seconds
+    // should be enabled after 10 seconds
     setTimeout(() => {
       setDisabled(false);
     }, 10000);

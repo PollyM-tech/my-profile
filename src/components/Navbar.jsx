@@ -13,11 +13,11 @@ export default function Navbar() {
 
   const handleResumeClick = (e) => {
     if (resumeClicked) {
-      e.preventDefault(); // Prevent repeated clicks
+      e.preventDefault();
       return;
     }
     setResumeClicked(true);
-    // Re-enable after 10 seconds
+    //  10 seconds should be enough
     setTimeout(() => setResumeClicked(false), 10000);
   };
 
@@ -33,7 +33,7 @@ export default function Navbar() {
           Pauline Moraa
         </Link>
 
-        {/* Mobile toggle button */}
+        {/* Mobile button*/}
         <button
           className="navbar-toggler"
           type="button"
@@ -44,7 +44,7 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible content */}
+        {/* Collapsible content for mobile */}
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">

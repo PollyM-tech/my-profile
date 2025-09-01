@@ -45,7 +45,7 @@ export default function About() {
                   <p className="text-success">Full Stack Developer</p>
                 </div>
 
-                {/* About Text */}
+                {/*  Text */}
                 <div className="col-md-8">
                   <p className="lead mb-4">
                     I'm{" "}
@@ -67,7 +67,7 @@ export default function About() {
                     </span>
                   </p>
 
-                  {/* Skills Cards */}
+                  {/*Cards */}
                   <div className="row g-3 mb-4">
                     <div className="col-md-4">
                       <div

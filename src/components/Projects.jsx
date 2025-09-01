@@ -150,7 +150,7 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Body */}
+         
                 <div className="card-body p-3 d-flex flex-column flex-grow-1">
                   <p
                     className="mb-3"
@@ -159,7 +159,7 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  {/* Tech Stack */}
+                  
                   <div className="mb-3">
                     <h6
                       style={{ color: "#2d6a4f", fontSize: "0.85rem" }}
