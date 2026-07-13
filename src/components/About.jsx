@@ -99,6 +99,10 @@ export default function About() {
 
   const certifications = [
     {
+      title: "Bsc Events and Convention Management",
+      institution: "The Technical University of Kenya",
+    },
+    {
       title: "Software Engineering",
       institution: "Moringa School",
     },
