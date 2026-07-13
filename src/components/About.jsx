@@ -1,3 +1,5 @@
+import image from "../assets/image.jpeg";
+
 export default function About() {
   const skillGroups = [
     {
@@ -77,6 +79,7 @@ export default function About() {
     "React",
     "TypeScript",
     "Next.js",
+    "Convex",
     "Python",
     "Flask",
     "GitHub",
@@ -135,6 +138,7 @@ export default function About() {
         {/* Header */}
         <div className="text-center mb-5">
           <h1 className="display-5 fw-bold text-success">About Me</h1>
+
           <div
             className="underline mx-auto mb-3"
             style={{
@@ -144,6 +148,7 @@ export default function About() {
               background: "linear-gradient(90deg, #70e000, #ccff33)",
             }}
           ></div>
+
           <p className="lead" style={{ color: "#245c43" }}>
             Technical Virtual Assistant, Software Developer, and Digital
             Operations Support Professional
@@ -162,31 +167,29 @@ export default function About() {
             >
               <div className="card-body p-4 p-md-5">
                 <div className="row align-items-center">
-                  {/* Profile Section */}
+                  {/* Profile Image Section */}
                   <div className="col-md-4 text-center mb-4 mb-md-0">
-                    <div
-                      className="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                    <img
+                      src={image}
+                      alt="Pauline Moraa"
+                      className="rounded-circle mx-auto mb-3 shadow"
                       style={{
-                        width: "150px",
-                        height: "150px",
-                        background:
-                          "linear-gradient(135deg, #2d6a4f, #70e000)",
-                        color: "white",
+                        width: "170px",
+                        height: "170px",
+                        objectFit: "cover",
+                        border: "5px solid white",
                         boxShadow: "0 10px 25px rgba(45, 106, 79, 0.25)",
                       }}
-                    >
-                      <span style={{ fontSize: "3rem", fontWeight: "700" }}>
-                        PM
-                      </span>
-                    </div>
+                    />
 
                     <h4 className="text-success fw-bold">Pauline Moraa</h4>
+
                     <p className="mb-0" style={{ color: "#245c43" }}>
                       Tech VA | Developer | Digital Operations
                     </p>
                   </div>
 
-                  {/* Text */}
+                  {/* About Text */}
                   <div className="col-md-8">
                     <p
                       className="lead mb-4"
@@ -198,14 +201,20 @@ export default function About() {
                       stay organized and work smarter.
                     </p>
 
-                    <p className="mb-4" style={{ color: "#245c43", lineHeight: "1.8" }}>
+                    <p
+                      className="mb-4"
+                      style={{ color: "#245c43", lineHeight: "1.8" }}
+                    >
                       My background includes building responsive websites and
                       web applications, supporting digital tools, managing
                       documentation, coordinating projects, handling online
                       research, and helping with client-facing communication.
                     </p>
 
-                    <p className="mb-0" style={{ color: "#245c43", lineHeight: "1.8" }}>
+                    <p
+                      className="mb-0"
+                      style={{ color: "#245c43", lineHeight: "1.8" }}
+                    >
                       What makes my profile unique is that I understand both the
                       technical side of digital systems and the operational side
                       of business support. I can assist with websites, workflows,
@@ -226,6 +235,7 @@ export default function About() {
             <h2 className="section-title text-center text-success">
               Featured Skills
             </h2>
+
             <p className="lead" style={{ color: "#245c43" }}>
               A practical mix of technical, administrative, AI, and digital
               business support skills.
@@ -290,6 +300,7 @@ export default function About() {
             <h2 className="section-title text-center text-success">
               My Toolbox
             </h2>
+
             <p className="lead" style={{ color: "#245c43" }}>
               Tools and platforms I use to build, organize, communicate, and
               support digital work.
@@ -332,6 +343,7 @@ export default function About() {
             <h2 className="section-title text-center text-success">
               Certifications
             </h2>
+
             <p className="lead" style={{ color: "#245c43" }}>
               Training across software engineering, AI, leadership, business,
               and project support.
@@ -365,6 +377,7 @@ export default function About() {
                     <h6 className="fw-bold mb-2" style={{ color: "#2d6a4f" }}>
                       {cert.title}
                     </h6>
+
                     <p className="mb-0 small" style={{ color: "#245c43" }}>
                       {cert.institution}
                     </p>

@@ -1,3 +1,5 @@
+import image from "../assets/image.jpeg";
+
 export default function Home() {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -173,16 +175,18 @@ export default function Home() {
             <div className="col-lg-6 order-lg-2 order-1 text-center mb-4 mb-lg-0">
               <div className="position-relative">
                 <img
-                  src="https://placehold.co/400x400/2d6a4f/white?text=PM"
-                  alt="Pauline Moraa"
-                  className="img-fluid rounded-circle shadow-lg"
-                  style={{
-                    maxWidth: "350px",
-                    width: "100%",
-                    border: "5px solid white",
-                    boxShadow: "0 15px 30px rgba(45, 106, 79, 0.2)",
-                  }}
-                />
+  src={image}
+  alt="Pauline Moraa"
+  className="img-fluid rounded-circle shadow-lg"
+  style={{
+    maxWidth: "350px",
+    width: "100%",
+    height: "350px",
+    objectFit: "cover",
+    border: "5px solid white",
+    boxShadow: "0 15px 30px rgba(45, 106, 79, 0.2)",
+  }}
+/>
 
                 <div
                   className="position-absolute"
