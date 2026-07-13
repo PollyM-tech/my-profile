@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -12,7 +11,7 @@ export default function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    window.onerror = (message, source, lineno, colno, error) => {
+    window.onerror = (message) => {
       setError(message);
     };
   }, []);
@@ -24,15 +23,29 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
+
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/resume" element={<Resume />} />
-        </Routes>
+        <section id="home">
+          <Home />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+
+        <section id="resume">
+          <Resume />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
+
       <Footer />
     </div>
   );

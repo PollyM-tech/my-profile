@@ -1,39 +1,55 @@
-import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [resumeClicked, setResumeClicked] = useState(false); // Track click
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState("home");
+  const [resumeClicked, setResumeClicked] = useState(false);
+
   const closeMenu = () => setIsOpen(false);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    closeMenu();
+
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   const handleResumeClick = (e) => {
     if (resumeClicked) {
       e.preventDefault();
       return;
     }
+
     setResumeClicked(true);
-    //  10 seconds should be enough
+    closeMenu();
+
     setTimeout(() => setResumeClicked(false), 10000);
   };
+
+  const navLinkStyle = (sectionId) => ({
+    color: activeSection === sectionId ? "#70e000" : "#2d6a4f",
+    fontWeight: activeSection === sectionId ? "600" : "500",
+    cursor: "pointer",
+  });
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
       <div className="container">
-        <Link
-          className="navbar-brand fw-bold"
-          to="/"
-          onClick={closeMenu}
+        <button
+          className="navbar-brand fw-bold border-0 bg-transparent"
+          onClick={() => scrollToSection("home")}
           style={{ color: "#1a7a4f" }}
         >
           Pauline Moraa
-        </Link>
+        </button>
 
-        {/* Mobile button*/}
         <button
           className="navbar-toggler"
           type="button"
@@ -44,71 +60,56 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible content for mobile */}
         <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link
-                className={`nav-link fw-medium ${
-                  location.pathname === "/" ? "active" : ""
+              <button
+                className={`nav-link fw-medium border-0 bg-transparent ${
+                  activeSection === "home" ? "active" : ""
                 }`}
-                to="/"
-                onClick={closeMenu}
-                style={{
-                  color: location.pathname === "/" ? "#70e000" : "#2d6a4f",
-                  fontWeight: location.pathname === "/" ? "600" : "500",
-                }}
+                onClick={() => scrollToSection("home")}
+                style={navLinkStyle("home")}
               >
                 Home
-              </Link>
+              </button>
             </li>
+
             <li className="nav-item">
-              <Link
-                className={`nav-link fw-medium ${
-                  location.pathname === "/about" ? "active" : ""
+              <button
+                className={`nav-link fw-medium border-0 bg-transparent ${
+                  activeSection === "about" ? "active" : ""
                 }`}
-                to="/about"
-                onClick={closeMenu}
-                style={{
-                  color: location.pathname === "/about" ? "#70e000" : "#2d6a4f",
-                  fontWeight: location.pathname === "/about" ? "600" : "500",
-                }}
+                onClick={() => scrollToSection("about")}
+                style={navLinkStyle("about")}
               >
                 About
-              </Link>
+              </button>
             </li>
+
             <li className="nav-item">
-              <Link
-                className={`nav-link fw-medium ${
-                  location.pathname === "/projects" ? "active" : ""
+              <button
+                className={`nav-link fw-medium border-0 bg-transparent ${
+                  activeSection === "projects" ? "active" : ""
                 }`}
-                to="/projects"
-                onClick={closeMenu}
-                style={{
-                  color:
-                    location.pathname === "/projects" ? "#70e000" : "#2d6a4f",
-                  fontWeight: location.pathname === "/projects" ? "600" : "500",
-                }}
+                onClick={() => scrollToSection("projects")}
+                style={navLinkStyle("projects")}
               >
                 Projects
-              </Link>
+              </button>
             </li>
+
             <li className="nav-item">
-              <Link
-                className={`nav-link fw-medium ${
-                  location.pathname === "/contact" ? "active" : ""
+              <button
+                className={`nav-link fw-medium border-0 bg-transparent ${
+                  activeSection === "contact" ? "active" : ""
                 }`}
-                to="/contact"
-                onClick={closeMenu}
-                style={{
-                  color:
-                    location.pathname === "/contact" ? "#70e000" : "#2d6a4f",
-                  fontWeight: location.pathname === "/contact" ? "600" : "500",
-                }}
+                onClick={() => scrollToSection("contact")}
+                style={navLinkStyle("contact")}
               >
                 Contact
-              </Link>
+              </button>
             </li>
+
             <li className="nav-item">
               <a
                 className={`nav-link fw-medium ${
@@ -122,6 +123,7 @@ export default function Navbar() {
                   color: resumeClicked ? "gray" : "#70e000",
                   pointerEvents: resumeClicked ? "none" : "auto",
                   cursor: resumeClicked ? "not-allowed" : "pointer",
+                  fontWeight: "600",
                 }}
               >
                 Resume
